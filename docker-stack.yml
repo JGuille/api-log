@@ -1,0 +1,101 @@
+version: "3"
+
+services:
+  fluent-bit:
+    image: grafana/fluent-bit-plugin-loki:latest
+    environment:
+      - LOKI_URL=http://loki:3100/loki/api/v1/push
+    volumes:
+      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+      - ./parsers.conf:/fluent-bit/etc/parsers.conf
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      GF_RENDERING_SERVER_URL: http://renderer:8081/render
+      GF_RENDERING_CALLBACK_URL: http://grafana:3000/
+      GF_LOG_FILTERS: rendering:debug
+      GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-piechart-panel,grafana-polystat-panel,briangann-gauge-panel
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  renderer:
+    image: grafana/grafana-image-renderer:latest
+    ports:
+      - "8081"
+    environment:
+      ENABLE_METRICS: "true"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  api-log:
+    image: api-log:latest
+    volumes:
+      # Mounts the project directory on the host to /app inside the container,
+      # allowing you to modify the code without having to rebuild the image.
+      - .:/usr/src/app
+      # Just specify a path and let the Engine create a volume.
+      # Data present in the base image at the specified mount point will be copied
+      # over to the new volume upon volume initialization.
+      # node_modules from this new volume will be used and not from your local dev env.
+      - /app/node_modules/
+
+    # Expose ports [HOST:CONTAINER}
+    ports:
+      - "4000:4000"
+
+    # Set environment variables from this file
+    env_file:
+      - .env
+
+    # Overwrite any env var defined in .env file (if required)
+
+    # Link to containers in another service.
+    # Links also express dependency between services in the same way as depends_on,
+    # so they determine the order of service startup.
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: localhost:24224
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
+networks:
+  default:
+    external:
+      name: loki

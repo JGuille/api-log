@@ -1,0 +1,100 @@
+[32mINFO[39m [2021-19-03, 4:06:43 PM] (api-log/12045 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development @: HUAWEI_Y9_Prime_2019-4e48 on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:07:01 PM] (api-log/12045 on HUAWEI_Y9_Prime_2019-4e48): [36mfetch all examples[39m
+    0: {
+      "id": 0,
+      "name": "example 0"
+    }
+    1: {
+      "id": 1,
+      "name": "example 1"
+    }
+[32mINFO[39m [2021-19-03, 4:07:59 PM] (api-log/12313 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development @: HUAWEI_Y9_Prime_2019-4e48 on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:08:08 PM] (api-log/12313 on HUAWEI_Y9_Prime_2019-4e48): [36mfetch all examples[39m
+    0: {
+      "id": 0,
+      "name": "example 0"
+    }
+    1: {
+      "id": 1,
+      "name": "example 1"
+    }
+[32mINFO[39m [2021-19-03, 4:14:38 PM] (api-log/13031 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development @: HUAWEI_Y9_Prime_2019-4e48 on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:15:19 PM] (api-log/13103 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development @: HUAWEI_Y9_Prime_2019-4e48 on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:15:36 PM] (api-log/13125 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:15:43 PM] (api-log/13125 on HUAWEI_Y9_Prime_2019-4e48): [36mfetch all examples[39m
+    0: {
+      "id": 0,
+      "name": "example 0"
+    }
+    1: {
+      "id": 1,
+      "name": "example 1"
+    }
+[32mINFO[39m [2021-19-03, 4:15:50 PM] (api-log/13125 on HUAWEI_Y9_Prime_2019-4e48): [36mfetch all examples[39m
+    0: {
+      "id": 0,
+      "name": "example 0"
+    }
+    1: {
+      "id": 1,
+      "name": "example 1"
+    }
+[32mINFO[39m [2021-19-03, 4:15:51 PM] (api-log/13125 on HUAWEI_Y9_Prime_2019-4e48): [36mfetch all examples[39m
+    0: {
+      "id": 0,
+      "name": "example 0"
+    }
+    1: {
+      "id": 1,
+      "name": "example 1"
+    }
+[32mINFO[39m [2021-19-03, 4:27:42 PM] (api-log/14347 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:28:01 PM] (api-log/14394 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:29:06 PM] (api-log/14512 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:32:34 PM] (api-log/14814 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:32:57 PM] (api-log/14864 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:36:08 PM] (api-log/15179 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:37:33 PM] (api-log/15179 on HUAWEI_Y9_Prime_2019-4e48): [36mfetch all examples[39m
+    0: {
+      "id": 0,
+      "name": "example 0"
+    }
+    1: {
+      "id": 1,
+      "name": "example 1"
+    }
+[32mINFO[39m [2021-19-03, 4:37:51 PM] (api-log/15366 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+[32mINFO[39m [2021-19-03, 4:39:10 PM] (api-log/15512 on HUAWEI_Y9_Prime_2019-4e48): [36mup and running in development on port: 4000}[39m
+INFO (api-log): up and running in development on port: 4000}
+INFO (api-log): fetch user with id 1
+INFO (api-log): fetch all users
+    0: {
+      "id": 0,
+      "name": "user 0"
+    }
+    1: {
+      "id": 1,
+      "name": "user 1"
+    }
+INFO (user 1):
+    id: 1
+INFO (api-log): up and running in development on port: 4000}
+INFO (api-log): fetch user with id 1
+INFO (user 1):
+    id: 1
+INFO (api-log): fetch user with id 1
+INFO (user 1):
+    id: 1
+INFO (api-log): fetch user with id 1
+INFO (user 1):
+    id: 1
+INFO (api-log): up and running in development on port: 4000}
+INFO (api-log): fetch user with id 1
+INFO (user 1):
+    id: 1
+INFO (api-log): fetch user with id 1
+INFO (user 1):
+    id: 1
+INFO (api-log): up and running in development on port: 4000}
+{"level":30,"time":1616542867526,"pid":54,"hostname":"30d35a81e8a4","name":"api-log","msg":"up and running in development on port: 4000}"}
+{"level":30,"time":1616542867964,"pid":54,"hostname":"30d35a81e8a4","name":"api-log","0":{"id":0,"name":"user 0"},"1":{"id":1,"name":"user 1"},"msg":"fetch all users, path: /users, method: GET, username: user 1"}
