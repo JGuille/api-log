@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 services:
   fluent-bit:
@@ -9,8 +9,8 @@ services:
       - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
       - ./parsers.conf:/fluent-bit/etc/parsers.conf
     ports:
-      - "24224:24224"
-      - "24224:24224/udp"
+      - '24224:24224'
+      - '24224:24224/udp'
     deploy:
       replicas: 1
       update_config:
@@ -21,7 +21,7 @@ services:
   loki:
     image: grafana/loki:latest
     ports:
-      - "3100"
+      - '3100'
     deploy:
       replicas: 1
       update_config:
@@ -32,7 +32,7 @@ services:
   grafana:
     image: grafana/grafana:latest
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       GF_RENDERING_SERVER_URL: http://renderer:8081/render
       GF_RENDERING_CALLBACK_URL: http://grafana:3000/
@@ -48,9 +48,9 @@ services:
   renderer:
     image: grafana/grafana-image-renderer:latest
     ports:
-      - "8081"
+      - '8081'
     environment:
-      ENABLE_METRICS: "true"
+      ENABLE_METRICS: 'true'
     deploy:
       replicas: 1
       update_config:
@@ -68,11 +68,11 @@ services:
       # Data present in the base image at the specified mount point will be copied
       # over to the new volume upon volume initialization.
       # node_modules from this new volume will be used and not from your local dev env.
-      - /app/node_modules/
+      - /usr/src/app/node_modules
 
     # Expose ports [HOST:CONTAINER}
     ports:
-      - "4000:4000"
+      - '4000:4000'
 
     # Set environment variables from this file
     env_file:
@@ -86,7 +86,8 @@ services:
     logging:
       driver: fluentd
       options:
-        fluentd-address: localhost:24224
+        tag: docker.ci.fluent-biy
+        fluentd-async-connect: 'true'
     deploy:
       replicas: 1
       update_config:
@@ -98,4 +99,4 @@ services:
 networks:
   default:
     external:
-      name: loki
+      name: developnet2
